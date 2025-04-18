@@ -1,0 +1,128 @@
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #d5dae0;
+}
+
+.create-class-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.create-class-section input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 15px;
+  font-size: 16px;
+  outline: none;
+  min-width: 250px;
+}
+
+.create-class-btn {
+  display: flex;
+  align-items: center;
+  background-color: #1b8ba5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.create-class-btn:hover {
+  background-color: #146b80;
+}
+
+.cancel-btn {
+  background-color: #888;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #666;
+}
+
+.plus-icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.my-classes-section h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #333;
+  position: relative;
+}
+
+.my-classes-section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background-color: #aaa;
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .classes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .create-class-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .create-class-section input {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .create-class-btn,
+  .cancel-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .classes-grid {
+    grid-template-columns: 1fr;
+  }
+}

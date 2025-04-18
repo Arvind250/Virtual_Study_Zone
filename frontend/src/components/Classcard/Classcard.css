@@ -1,0 +1,24 @@
+.class-card {
+    background-color: #5ab5cc;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    color: rgb(0, 0, 0);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgb(29, 115, 164);
+  }
+  
+  .class-card h3 {
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+  }
