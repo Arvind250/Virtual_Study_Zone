@@ -98,8 +98,13 @@ const Dashboard = () => {
   };
 
   const handleClassClick = (className) => {
-    navigate(`/teacher/${className}`);
+    if (role === 'teacher') {
+      navigate(`/teacher/class/${className}`);
+    } else {
+      navigate(`/student/class/${className}`);
+    }
   };
+  
 
   return (
     <div className="dashboard">

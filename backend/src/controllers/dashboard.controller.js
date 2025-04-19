@@ -6,7 +6,7 @@ import {ClassModel} from "../models/class.model.js"; // you'll create this model
 export const getTeacherDashboard = asyncHandler(async (req, res) => {
     const teacherId = req.user._id;
 
-    const classes = await ClassModel.find({ teacher: teacherId }).populate("students");
+    const classes = await ClassModel.find({ teacher: teacherId }).populate("students","username email");
 
     res.status(200).json({
         success: true,
