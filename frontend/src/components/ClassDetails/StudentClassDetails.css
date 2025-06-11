@@ -1,0 +1,91 @@
+.class-details-page {
+    min-height: 100vh;
+    background-color: #c6cbd1;
+  }
+  
+  .class-details-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .class-info-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e3e8ec;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .class-info-left,
+  .class-info-right {
+    flex: 1;
+    text-align: left;
+    color: rgb(62, 61, 61);
+  }
+  
+  .class-info-center {
+    flex: 2;
+    text-align: center;
+    color: #0066cc;
+  }
+  
+  .divider {
+    border: none;
+    height: 1px;
+    background-color: #999;
+    margin: 1.5rem 0;
+  }
+  
+  .enrollment-message {
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    color: #008000;
+  }
+
+  .upload-section {
+    margin-top: 2rem;
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .upload-section button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .upload-section button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .grading-response {
+    margin-top: 2rem;
+    background-color: #f2f7fb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  

@@ -1,0 +1,393 @@
+:root {
+    /* Dark theme color variables */
+    --body-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --dark-text: #f5f5f5;
+    --light-text: #a0a0a0;
+    --primary-color: #6366f1;
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --secondary-color: #262626;
+    --border-color: #333333;
+    --error-color: #ef4444;
+  }
+  
+  input:-webkit-autofill {
+    background-color: transparent !important;
+    color: white !important;
+    box-shadow: 0 0 0px 1000px #262626 inset !important;
+    -webkit-text-fill-color: #f5f5f5 !important;
+  }
+    
+  body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+  }
+    
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+  }
+    
+  .auth-card {
+    width: 100%;
+    max-width: 450px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(75, 85, 99, 0.5);
+    animation: cardPulse 6s infinite alternate ease-in-out;
+  }
+    
+  @keyframes cardPulse {
+    0% {
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+      box-shadow: 0 15px 35px rgba(99, 102, 241, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+    
+  .auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+    
+  .auth-header h2 {
+    font-size: 28px;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+    
+  .auth-header p {
+    color: var(--light-text);
+    font-size: 16px;
+  }
+    
+  .auth-form {
+    margin-bottom: 25px;
+  }
+    
+  .form-group {
+    margin-bottom: 22px;
+  }
+    
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+  }
+    
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: var(--secondary-color);
+  }
+    
+  .input-container:focus-within {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+    animation: inputGlow 2s infinite alternate ease-in-out;
+  }
+    
+  @keyframes inputGlow {
+    0% {
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+    }
+    100% {
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.4);
+    }
+  }
+    
+  .input-container .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    color: var(--light-text);
+    font-size: 18px;
+  }
+    
+  .input-container input {
+    flex: 1;
+    border: none;
+    padding: 15px 15px 15px 0;
+    background: transparent;
+    font-size: 16px;
+    color: var(--dark-text);
+    outline: none;
+  }
+    
+  .input-container input::placeholder {
+    color: var(--light-text);
+    opacity: 0.7;
+  }
+    
+  .auth-button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+    
+  .auth-button:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    animation: buttonShine 6s infinite;
+    opacity: 0;
+  }
+    
+  .auth-button:hover:after {
+    opacity: 1;
+  }
+    
+  @keyframes buttonShine {
+    0% {
+      transform: rotate(45deg) translate(-100%, -100%);
+    }
+    100% {
+      transform: rotate(45deg) translate(100%, 100%);
+    }
+  }
+    
+  .auth-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+    
+  .auth-button:active {
+    transform: translateY(1px);
+  }
+    
+  .auth-button.loading {
+    background-color: var(--primary-light);
+    cursor: not-allowed;
+  }
+    
+  .loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+  }
+    
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+    
+  .auth-footer {
+    margin-top: 30px;
+    text-align: center;
+  }
+    
+  .auth-footer p {
+    font-size: 14px;
+    color: var(--text-color);
+  }
+    
+  .auth-footer a,
+  .auth-footer a:visited {
+    color: var(--primary-light);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+    
+  .auth-footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(129, 140, 248, 0.3);
+  }
+    
+  .error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(239, 68, 68, 0.15);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Additional styles for dark theme background effect */
+  .auth-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+  }
+  
+  .circle-1 {
+    width: 400px;
+    height: 400px;
+    background: #6366f1;
+    top: -100px;
+    right: -100px;
+    animation: floatCircle 20s infinite alternate ease-in-out;
+  }
+  
+  .circle-2 {
+    width: 300px;
+    height: 300px;
+    background: #4f46e5;
+    bottom: -50px;
+    left: -50px;
+    animation: floatCircle 15s infinite alternate-reverse ease-in-out;
+  }
+  
+  .circle-3 {
+    width: 200px;
+    height: 200px;
+    background: #818cf8;
+    top: 40%;
+    left: 30%;
+    animation: floatCircle 18s infinite alternate ease-in-out;
+  }
+  
+  @keyframes floatCircle {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 50px);
+    }
+  }
+  
+  /* Updated dropdown styles to match the rest of your form */
+  .role-select-group {
+    margin-bottom: 22px; /* Match your other form-group margin */
+  }
+  
+  .role-select-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 10px; /* Match your other inputs */
+    transition: all 0.3s ease;
+    background-color: var(--secondary-color);
+  }
+  
+  .role-select-container:focus-within {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+    animation: inputGlow 2s infinite alternate ease-in-out;
+  }
+  
+  .role-select-container .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    color: var(--light-text);
+    font-size: 18px;
+  }
+  
+  .role-select {
+    flex: 1;
+    border: none;
+    padding: 15px 15px 15px 0;
+    background: transparent;
+    font-size: 16px;
+    color: var(--dark-text);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .role-select option {
+    background-color: var(--secondary-color);
+    color: var(--dark-text);
+    padding: 10px;
+  }
+  
+  /* Custom dropdown arrow */
+  .role-select-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .role-select-arrow:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--light-text);
+  }
+  
+  /* For Firefox which handles select styling differently */
+  @-moz-document url-prefix() {
+    .role-select {
+      color: var(--dark-text);
+      background-color: transparent;
+    }
+  }
+  
+  /* For the placeholder option */
+  .role-select option[value=""] {
+    color: var(--light-text);
+  }

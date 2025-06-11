@@ -1,0 +1,88 @@
+.class-details-page {
+  min-height: 100vh;
+  background-color: #ccd4d9; /* similar to your light gray-blue */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.class-details-container {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.class-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c0dff5; /* light gray similar to your layout */
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+.class-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.class-info span,
+.class-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+  text-align: center;
+}
+
+.class-title {
+  color: #005bbd;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #4764e8;
+  margin: 1.5rem 0;
+}
+
+.students-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.student-card {
+  background-color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor:pointer;
+  color: rgb(80, 81, 82);
+}
+
+.student-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.assignment-chip {
+  background-color: #d0d0d0;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.grade-text {
+  font-weight: bold;
+  color: #2e8b57; /* sea green for grade */
+}
+
+.not-submitted {
+  font-style: italic;
+  color: #b03b3b;
+}

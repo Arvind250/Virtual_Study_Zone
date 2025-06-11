@@ -1,0 +1,54 @@
+.landing-page {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vignette-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: 1;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: rgb(230, 243, 255);
+    
+  }
+  
+  .content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content p {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .content button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #2bcf67ae;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .content button:hover {
+    background-color: #115720;
+  }
+  
